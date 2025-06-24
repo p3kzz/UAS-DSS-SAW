@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlternatifController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KriteriaController;
@@ -22,4 +23,7 @@ Route::get('/create-alternatif', [AlternatifController::class, 'create'])->name(
 
 Route::get('/index-saw', [SAWController::class, 'index'])->name('index_saw');
 Route::get('/saw', [SAWController::class, 'saw'])->name('saw');
+
+
+Route::get('/login', [AuthController::class, 'auth'])->name('auth');
 
