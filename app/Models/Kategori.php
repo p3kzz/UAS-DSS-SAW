@@ -9,11 +9,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Kategori extends Model
 {
     use HasFactory;
-    protected $guarded = [
-        'id',
-    ];
+    protected $table = 'kategoris';
+    protected $fillable = ['nama_kategori'];
 
-    public function alternatifs():HasMany{
+
+    public function alternatifs(): HasMany
+    {
         return $this->hasMany(Alternatif::class);
     }
 }
