@@ -8,22 +8,21 @@ use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\SAWController;
 use Illuminate\Support\Facades\Route;
 
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::get('/', [DashboardController::class, 'index']);
+    Route::get('/kriteria', [KriteriaController::class, 'index'])->name('kriteria');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
+    Route::get('/create-kategori', [KategoriController::class, 'create'])->name('create-kategori');
 
-Route::get('/kriteria', [KriteriaController::class, 'index'])->name('kriteria');
+    Route::get('/alternatif', [AlternatifController::class, 'index'])->name('alternatif');
+    Route::get('/create-alternatif', [AlternatifController::class, 'create'])->name('create_alternatif');
 
-Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
-Route::get('/create-kategori', [KategoriController::class, 'create'])->name('create-kategori');
+    Route::get('/index-saw', [SAWController::class, 'index'])->name('index_saw');
+    Route::get('/saw', [SAWController::class, 'saw'])->name('saw');
+});
 
-Route::get('/alternatif', [AlternatifController::class, 'index'])->name('alternatif');
-Route::get('/create-alternatif', [AlternatifController::class, 'create'])->name('create_alternatif');
-
-Route::get('/index-saw', [SAWController::class, 'index'])->name('index_saw');
-Route::get('/saw', [SAWController::class, 'saw'])->name('saw');
-
-
-Route::get('/login', [AuthController::class, 'auth'])->name('auth');
-
+Route::get('/', [AuthController::class, 'index'])->name('login');
+Route::post('/login', [AuthController::class, 'auth']);
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
