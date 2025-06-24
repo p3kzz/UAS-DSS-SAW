@@ -34,7 +34,7 @@
                                     <div class="col-6">
                                         <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Kategori</span>
                                         <h4 class="mb-3">
-                                            $<span class="counter-value" data-target="865.2">0</span>k
+                                            <span class="counter-value" data-target="{{ $kategori }}">0</span>
                                         </h4>
                                     </div>
 
@@ -55,7 +55,7 @@
                                     <div class="col-6">
                                         <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Alternatif</span>
                                         <h4 class="mb-3">
-                                            <span class="counter-value" data-target="6258">0</span>
+                                            <span class="counter-value" data-target="{{ $alternatif }}">0</span>
                                         </h4>
                                     </div>
                                     <div class="col-6">
