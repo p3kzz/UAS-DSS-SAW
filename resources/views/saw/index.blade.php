@@ -29,11 +29,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>System Architect</td>
-                                            <td><a href="{{ route('saw') }}">SAW</a></td>
-                                        </tr>
+                                        @foreach ($kategori as $index => $item)
+                                            <tr>
+                                                <td scope="row">{{ $loop->iteration }}</td>
+                                                <td>{{ $item->nama_kategori }}</td>
+                                                <td><a href="{{ route('saw', $item->id) }}"><i class="mdi mdi-eye"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

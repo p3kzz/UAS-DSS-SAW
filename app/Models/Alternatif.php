@@ -10,21 +10,30 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Alternatif extends Model
 {
     use HasFactory;
-    protected $guarded = [
-        'id',
+    protected $table = 'alternatifs';
+    protected $fillable = [
+        'nama_alternatif',
+        'harga',
+        'kualitas',
+        'kecepatan_pengiriman',
+        'konsistensi_pasokan',
+        'kemudahan_komunikasi',
+        'kategori_id',
+        'kriteria_id'
     ];
 
-   public function kategori() : BelongsTo
+    public function kategori(): BelongsTo
     {
         return $this->belongsTo(Kategori::class);
     }
 
-     public function kriteria() : BelongsTo
+    public function kriteria(): BelongsTo
     {
         return $this->belongsTo(Kriteria::class);
     }
 
-    public function nilaiAkhir():HasOne{
+    public function nilaiAkhir(): HasOne
+    {
         return $this->hasOne(NilaiAkhir::class);
     }
 }
