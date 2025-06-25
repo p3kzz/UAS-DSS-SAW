@@ -40,7 +40,7 @@
                                             @foreach ($kriterias as $kriteria)
                                                 <th>{{ $kriteria->kode }}</th>
                                             @endforeach
-                                            <th>Aksi</th>
+                                            {{-- <th>Aksi</th> --}}
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -53,12 +53,12 @@
                                                 <td>{{ $item->kecepatan_pengiriman }}</td>
                                                 <td>{{ $item->konsistensi_pasokan }}</td>
                                                 <td>{{ $item->kemudahan_komunikasi }}</td>
-                                                <td>
+                                                {{-- <td>
                                                     <a href="/alternatif/{{ $item->id }}/edit"><i
                                                             class="dripicons-pencil"></i></a>
                                                     <a href="/alternatif/{{ $item->id }}/hapus"><i
                                                             class="text-red-500 dripicons-trash"></i></a>
-                                                </td>
+                                                </td> --}}
 
                                             </tr>
                                         @endforeach
