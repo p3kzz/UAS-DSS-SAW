@@ -29,7 +29,6 @@ class SAWController extends Controller
             $nilaiMin[$kriteria->id] = Alternatif::min($kriteria->nama_kriteria);
         }
 
-        // 2. Normalisasi dan hitung nilai preferensi
         $normalisasi = [];
         $preferensi = [];
 
@@ -52,7 +51,6 @@ class SAWController extends Controller
             $preferensi[$alternatif->id] = $total;
         }
 
-        // 3. Kirim ke view
         return view('saw.saw', compact('alternatifs', 'kriterias', 'normalisasi', 'preferensi'));
     }
 }
